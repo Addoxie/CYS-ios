@@ -1,0 +1,79 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+//获取设备的物理高度
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//获取设备的物理宽度
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+
+#define kimiColor(r,g,b,a) [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:a]
+//线的颜色
+#define KLineColor kimiColor(192,192,192,1)
+//背景颜色
+#define KBackgroundColor kimiColor(246,247,249,1)
+//红色
+#define KRedColor kimiColor(201,36,40,1)
+//黑色
+#define KBlackColor kimiColor(112, 112, 112, 1)
+//灰色
+#define KGrayColor kimiColor(130, 130, 130, 1)
+//浅线颜色
+#define KLightLineColor kimiColor(237,237,237,1)
+//绿色
+#define KGreenColor kimiColor(85, 196, 103, 1)
+//黄色
+#define KYellowColor kimiColor(227, 211, 77, 1)
+//WEIBO
+#define kAppKey @"wb3063413559"
+
+#define kRedirectURI @"http://www.sina.com"
+//网络图片缓存
+#define KSDImage(imageView,urlStr,imageName) [imageView sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:[UIImage imageNamed:imageName]]
+
+
+//计算字符串的宽和高
+#define KStringSize(string,width,height,font) [string boundingRectWithSize:CGSizeMake(width, height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:font]} context:nil].size
+//textfield调整光标
+#define KtfAddpaddingView(textfield) textfield.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 40)];;\
+textfield.leftViewMode = UITextFieldViewModeAlways;
+
+//字体大小
+#define KFont(size) [UIFont systemFontOfSize:size]
+//字体加粗
+#define KBoldFont(size) [UIFont boldSystemFontOfSize:size]
+////baseUr
+//#define k_baseurl @"http://www.zhongdianer.com/api/"
+//////sbaseUrl
+//#define k_sbaseurl @"https://www.zhongdianer.com/api/"
+
+
+//baseUrl
+#define k_baseurl @"http://123.59.47.218:82/api/"
+//sbaseUrl
+#define k_sbaseurl @"http://123.59.47.218:82/api/"
+//边框
+#define KBorder(objc,radius,width,bColor)\
+objc.clipsToBounds=YES;\
+objc.layer.cornerRadius=radius;\
+objc.layer.borderWidth=width;\
+objc.layer.borderColor=bColor.CGColor;\
+objc.layer.masksToBounds=YES;
+
+
+//系统版本
+#define k_app_info @"1234567890"
+
+
+  
+#endif
